@@ -101,9 +101,10 @@ export default {
           workload: workload,
         };
         this.items.push(newToDo);
-        this.toDoItems.name = "";
-        this.toDoItems.description = "";
-        this.toDoItems.workload = "";
+
+        Object.keys(this.toDoItems).map((item) => {
+          return (this.toDoItems[item] = "");
+        });
       } else {
         alert("Fill in all fields please");
       }
